@@ -1,5 +1,5 @@
 {
-	"FIO":"IvanovII",
-	"CODE0": 1,
-	"CODE1": 2
+	"IvanovII":{
+		"FIO":"Ivan"
+	}
 }

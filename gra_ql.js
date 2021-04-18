@@ -3,26 +3,24 @@ var express = require('express');
 var { graphqlHTTP } = require('express-graphql');
 var { buildSchema } = require('graphql');
 
-let uData = JSON.parse(fs.readFile("./1.json", ()=>{}));
+let ud = JSON.parse(fs.readFile("./1.json", ()=>{}));
 
-const UserData = new GraphQLObjectType({
-    FIO: uData.FIO,
-    CODE0: uData.CODE0,
-    CODE1: uData.CODE1
-  });
+let userData = {
+	FIO:"IvanovII",
+	CODE0:1,
+	CODE1: 2
+}
 
 var schema = buildSchema(`
  type Query {
     hello: String,
-    user: UserData
  }
 `);
  
 
 
 var root = { 
-    hello: () => 'Hello world!',
-    user: userData
+    hello: () => ud.FIO,
 };
  
 var app = express();
