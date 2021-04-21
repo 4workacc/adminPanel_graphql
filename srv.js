@@ -15,7 +15,7 @@ let root = {
 let app = express();
 
 app.use("/graphql", graphqlHTTP({
-    schema:schema,
+    schema,
     rootValue: root,
     graphiql: true
 }));
